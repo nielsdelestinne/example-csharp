@@ -42,6 +42,7 @@ namespace InheritanceAndOthers
                 10,
                 15,
                 5,
+                7,
                 6,
                 7
             };
@@ -79,6 +80,34 @@ namespace InheritanceAndOthers
             foreach (var method in methods)
             {
                 Console.WriteLine($"{method.MethodName} - {method.MethodOverloads}");
+            }
+
+            Console.WriteLine("\n--------------\n");
+
+            Console.WriteLine(listofInt.Any(x => x == 7));
+
+            Console.WriteLine("\n--------------\n");
+
+            var outputDistinct = listofInt.Distinct()
+                .Select(x => x * 9);
+
+            foreach (var element in outputDistinct)
+            {
+                Console.WriteLine(element);
+            }
+
+            Console.WriteLine("\n--------------\n");
+
+            List<string> codes = new List<String> {"BE", "NL"};
+            List<string> countries = new List<String> { "BELGIE", "NEDERLANDS" };
+
+            var codesWithCountries =
+                codes.Zip(countries, (code, country) =>
+                    $"{code} : {country}");
+
+            foreach (var zipped in codesWithCountries)
+            {
+                Console.WriteLine(zipped);
             }
         }
     }
